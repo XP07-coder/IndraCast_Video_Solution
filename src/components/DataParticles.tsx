@@ -1,6 +1,4 @@
-import React from 'react';
-
-const DataParticles: React.FC = () => {
+const DataParticles = () => {
   const particles = Array.from({ length: 20 }, (_, i) => ({
     id: i,
     left: Math.random() * 100,

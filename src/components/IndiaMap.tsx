@@ -1,11 +1,9 @@
-import React from 'react';
-
 interface IndiaMapProps {
   events?: Array<{ x: number; y: number; type: string; label: string }>;
   showHeatmap?: boolean;
 }
 
-const IndiaMap: React.FC<IndiaMapProps> = ({ events = [], showHeatmap = false }) => {
+const IndiaMap = ({ events = [], showHeatmap = false }: IndiaMapProps) => {
   return (
     <svg viewBox="0 0 500 600" className="w-full h-full" style={{ filter: 'drop-shadow(0 0 10px rgba(6,182,212,0.15))' }}>
       <defs>

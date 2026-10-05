@@ -1,5 +1,3 @@
-import React from 'react';
-
 const LOOP_STAGES = [
   { label: 'COLLECT', icon: '📡', color: '#06b6d4' },
   { label: 'UNDERSTAND', icon: '🧠', color: '#2563eb' },
@@ -16,7 +14,7 @@ interface IntelligenceLoopProps {
   compact?: boolean;
 }
 
-const IntelligenceLoop: React.FC<IntelligenceLoopProps> = ({ active = true, highlightStage = -1, compact = false }) => {
+const IntelligenceLoop = ({ active = true, highlightStage = -1, compact = false }: IntelligenceLoopProps) => {
   const size = compact ? 280 : 380;
   const radius = compact ? 100 : 140;
   const centerX = size / 2;

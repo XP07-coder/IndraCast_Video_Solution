@@ -1,5 +1,5 @@
-import React from 'react';
 import { Cloud, MapPin, AlertTriangle, CheckCircle, Clock, BarChart3, Activity, Eye } from 'lucide-react';
+import type { ReactNode } from 'react';
 
 interface DashboardProps {
   showAnalytics?: boolean;
@@ -7,7 +7,7 @@ interface DashboardProps {
   compact?: boolean;
 }
 
-const Dashboard: React.FC<DashboardProps> = ({ showAnalytics = false, showEvents = true, compact = false }) => {
+const Dashboard = ({ showAnalytics = false, showEvents = true, compact = false }: DashboardProps) => {
   return (
     <div className={`glass-card p-3 ${compact ? 'text-xs' : 'text-sm'} w-full`}>
       {/* Header */}
@@ -111,7 +111,7 @@ const Dashboard: React.FC<DashboardProps> = ({ showAnalytics = false, showEvents
   );
 };
 
-const StatCard: React.FC<{ icon: React.ReactNode; label: string; value: string; color: string }> = ({ icon, label, value, color }) => {
+const StatCard = ({ icon, label, value, color }: { icon: ReactNode; label: string; value: string; color: string }) => {
   const colorMap: Record<string, string> = {
     cyan: 'text-cyan-400 border-cyan-900/30',
     red: 'text-red-400 border-red-900/30',
@@ -129,7 +129,7 @@ const StatCard: React.FC<{ icon: React.ReactNode; label: string; value: string; 
   );
 };
 
-const EventItem: React.FC<{ type: 'corroborated' | 'flagged' | 'review'; title: string; location: string }> = ({ type, title, location }) => {
+const EventItem = ({ type, title, location }: { type: 'corroborated' | 'flagged' | 'review'; title: string; location: string }) => {
   const statusColor = type === 'corroborated' ? 'bg-green-500' : type === 'flagged' ? 'bg-red-500' : 'bg-yellow-500';
   const statusLabel = type === 'corroborated' ? '✓' : type === 'flagged' ? '⚠' : '?';
   return (
@@ -145,7 +145,7 @@ const EventItem: React.FC<{ type: 'corroborated' | 'flagged' | 'review'; title: 
   );
 };
 
-const SourceBar: React.FC<{ label: string; pct: number; color: string }> = ({ label, pct, color }) => (
+const SourceBar = ({ label, pct, color }: { label: string; pct: number; color: string }) => (
   <div className="flex items-center gap-1">
     <span className="text-[8px] text-gray-400 w-16 truncate">{label}</span>
     <div className="flex-1 h-1.5 bg-navy-light rounded-full overflow-hidden">

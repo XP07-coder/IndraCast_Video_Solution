@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cloud, ChevronRight, ChevronLeft, Play, Pause, RotateCcw } from 'lucide-react';
 import IndiaMap from './components/IndiaMap';
